@@ -26,10 +26,15 @@
     - **LoadBalancer**: Creates an external load balancer in the current cluster and assigns a fixed external ip to the service.
     - **ExternalName**: Maps the service to the contents of the `externalName`field (`xyz.com`). This type requires v1.7+ of kube-dns, or CoreDNS version 0.0.8+.
 - `kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080` exposes a deployment as a NodePort service under the port 8080
+- `kubectl delete service --selector app=kubernetes-bootcamp` delete by label
+- `kubectl delete service/servicename` delete by service name
 
 ## Kubectl Labels
 - List pod/deployment/replicasSet/service labels: `kubectl get pods --show-labels`
 - Add labels to running pods: `kubectl label pod/helloworld app=mhgf`
 - Delete label: `kubectl label pod/helloworld app-` (deleting app label)
-- Filter by label: `kubectl get posts --selector env=production` (filter all pods which label is env=production)
-- Filter by multiple labels: `kubectl get posts --selector env=production,devlead=carisa` (filter all pods which label is env=production)
+- Filter by label: `kubectl get posts [--selector|-l] env=production` (filter all pods which label is env=production)
+- Filter by multiple labels: `kubectl get posts [--selector|-l] env=production,devlead=carisa` (filter all pods which label is env=production)
+
+## Kubectl App Scale
+- Scale up a deployment: `kubectl scale deployments/kubernetes-bootcamp --replicas=4`
