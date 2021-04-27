@@ -37,4 +37,10 @@
 - Filter by multiple labels: `kubectl get posts [--selector|-l] env=production,devlead=carisa` (filter all pods which label is env=production)
 
 ## Kubectl App Scale
-- Scale up a deployment: `kubectl scale deployments/kubernetes-bootcamp --replicas=4`
+- Scale up/down a deployment: `kubectl scale deployments/kubernetes-bootcamp --replicas=4`
+
+## Kubectl Update Deployment
+- `kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2` (provide image for deployment)
+- Scale up/down a deployment: `kubectl scale deployments/kubernetes-bootcamp --replicas=4`
+- Confirm an update: `kubectl rollout status deployments/kubernetes-bootcamp`
+- Rollback an update: `kubectl rollout undo deployments/kubernetes-bootcamp`
