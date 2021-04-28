@@ -46,7 +46,7 @@
 - Rollback an update: `kubectl rollout undo deployments/kubernetes-bootcamp`
 
 ## Kubectl Secrets
-- List secrets: `kubectl get secrets` list secrets
-- Create a secret: `kubectl create secret generic empty-secret`
-- Describe the entries in a secret: `kubectl describe secret empty-secret`
+- List secrets: `kubectl get secrets`
+- Create a secret: `kubectl create secret generic secret_name`
+- Describe the entries in a secret: `kubectl describe secret secret_name`
  
