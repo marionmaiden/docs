@@ -44,3 +44,9 @@
 - Scale up/down a deployment: `kubectl scale deployments/kubernetes-bootcamp --replicas=4`
 - Confirm an update: `kubectl rollout status deployments/kubernetes-bootcamp`
 - Rollback an update: `kubectl rollout undo deployments/kubernetes-bootcamp`
+
+## Kubectl Secrets
+- List secrets: `kubectl get secrets` list secrets
+- Create a secret: `kubectl create secret generic empty-secret`
+- Describe the entries in a secret: `kubectl describe secret empty-secret`
+ 
