@@ -6,6 +6,8 @@
 - `kubectl version`
 - View cluster details: `kubectl cluster-info`
 - View nodes within a cluster: `kubectl get nodes`
+- Get contexts: `kubectl config get-contexts`
+- Get context in use: `kubectl config current-context`
 
 ## Kubectl deployment
 - Get deployments in cluster: `kubectl get deployments`
@@ -50,6 +52,8 @@
 ## Kubectl Secrets
 - List secrets: `kubectl get secrets`
 - List decoded secrets (requires **jq**): `kubectl get secret secret_name -o json | jq '.data | map_values(@base64d)'` 
+- View secret file: `kubectl get secret secret_name -o yaml`
 - Create a secret: `kubectl create secret generic secret_name`
 - Describe the entries in a secret: `kubectl describe secret secret_name`
 - Edit a secrets file: `kubectl edit secret dispatcher`
+- Apply a secret file: `kubectl apply -f stage_sec.yaml`
