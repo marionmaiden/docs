@@ -52,3 +52,4 @@
 - List decoded secrets (requires **jq**): `kubectl get secret secret_name -o json | jq '.data | map_values(@base64d)'` 
 - Create a secret: `kubectl create secret generic secret_name`
 - Describe the entries in a secret: `kubectl describe secret secret_name`
+- Edit a secrets file: `kubectl edit secret dispatcher`
