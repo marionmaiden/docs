@@ -4,8 +4,13 @@
 - Release: instance of a **chart** running in a kubernetes cluster. Every chart deployment creates a new release. If you deploy the same chart twice in a cluster, both will be assigned with different release names.
 
 ## Helm Repository
-- Adding a repository (e.g. github) to the local helm client: `helm repo add https://brigadecore.github.io/charts`
+
+### Public repo (
 - Search a chart over the public Artifact hub: `helm search hub wordpress`
+
+### Local repo
+- Adding a repository (e.g. github) to the local helm client: `helm repo add https://brigadecore.github.io/charts`
+
 - Search a chart over the repositories added to the local client: `helm search repo dispatcher`
 
 ## Helm Install
@@ -20,6 +25,8 @@
 - Check Helm release values: `helm get values happy-panda` (release name)
 - Check Helm release history: `helm history happy-panda`(release name)
 - List Helm deployed releases: `helm list`
+- List uninstalled releases (which used --keep-history flag): `helm list --uninstalled`
+- List all releases (deployed, failed or uninstalled with **--keep-history**): `helm list --all`
 - View configurable options in the chart: `helm show values bitnami/wordpress` (chart name)
 
 ## Managing Helm charts
@@ -37,4 +44,4 @@
 
 ## Uninstall a Release
 - Uninstall a release: `helm uninstall happy-panda`
-- Uninstall a release but keep release history
+- Uninstall a release but keep release history: `helm uninstall happy-panda --keep-history`
