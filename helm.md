@@ -9,8 +9,10 @@
 - Search a chart over the public Artifact hub: `helm search hub wordpress`
 
 ### Local repo
-- Adding a repository (e.g. github) to the local helm client: `helm repo add https://brigadecore.github.io/charts`
-
+- List local repos: `helm repo list`
+- Add a repository (e.g. github) to the local helm client: `helm repo add reponame https://brigadecore.github.io/charts`
+- Update a repository (e.g. github) to the local helm client: `helm repo update reponame https://brigadecore.github.io/charts`
+- Remove a repository (e.g. github) to the local helm client: `helm repo remove reponame`
 - Search a chart over the repositories added to the local client: `helm search repo dispatcher`
 
 ## Helm Install
@@ -45,3 +47,8 @@
 ## Uninstall a Release
 - Uninstall a release: `helm uninstall happy-panda`
 - Uninstall a release but keep release history: `helm uninstall happy-panda --keep-history`
+
+## Creating Charts
+- Create a new chart: `helm create chartname` (creates a chart folder under **./chartname**)
+- Validate the chart: `helm lint chartname``
+- Package a chart for distribution: `helm package chartname` (after that, you can `helm install`it)
