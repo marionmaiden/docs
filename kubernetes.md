@@ -4,20 +4,22 @@
 
 # Kubectl
 - `kubectl version`
-- `kubectl cluster-info` cluster details
-- `kubectl get nodes` view nodes in cluster
+- View cluster details: `kubectl cluster-info`
+- View nodes within a cluster: `kubectl get nodes`
 
 ## Kubectl deployment
-- `kubectl get deployments`
-- `kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1` create a deployment (define a name and the image to be used)
+- Get deployments in cluster: `kubectl get deployments`
+- Create a deployment (define a name and the image to be used): `kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1`
+- Create a deployment from file: `kubectl create -f file.yaml`
+- Create or update a deployment: `kubectl apply -f file.yaml`
 
 ## Kubectl proxy
 - `kubectl proxy` opens a direct connection to cluster so we can access the pods
 
 ## Kubectl pod
-- `kubectl logs POD_NAME`
-- `kubectl exec POD_NAME -- ls`(here calling **ls** from the pod but can be any command)
-- `kubectl exec -it POD_NAME -- bash`
+- Visualizes the pod logs: `kubectl logs POD_NAME`
+- Run command over a pod: `kubectl exec POD_NAME -- ls`(here calling **ls** from the pod but can be any command)
+- Open bash over a pod: `kubectl exec -it POD_NAME -- bash`
 
 ## Kubectl Services
 - Services can be exposed in different ways
@@ -25,9 +27,9 @@
     - **NodePort**: Exposes each service on the same port of each separate node (the service can be accessed from outside the cluster using `Node_IP`:`Node_Port`)
     - **LoadBalancer**: Creates an external load balancer in the current cluster and assigns a fixed external ip to the service.
     - **ExternalName**: Maps the service to the contents of the `externalName`field (`xyz.com`). This type requires v1.7+ of kube-dns, or CoreDNS version 0.0.8+.
-- `kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080` exposes a deployment as a NodePort service under the port 8080
-- `kubectl delete service --selector app=kubernetes-bootcamp` delete by label
-- `kubectl delete service/servicename` delete by service name
+- Exposes a deployment as a NodePort service under the port 8080: `kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080`
+- Delete service by label: `kubectl delete service --selector app=kubernetes-bootcamp`
+- Delete by service name: `kubectl delete service/servicename`
 
 ## Kubectl Labels
 - List pod/deployment/replicasSet/service labels: `kubectl get pods --show-labels`
@@ -47,6 +49,6 @@
 
 ## Kubectl Secrets
 - List secrets: `kubectl get secrets`
+- List decoded secrets (requires **jq**): `kubectl get secret secret_name -o json | jq '.data | map_values(@base64d)'` 
 - Create a secret: `kubectl create secret generic secret_name`
 - Describe the entries in a secret: `kubectl describe secret secret_name`
- 
