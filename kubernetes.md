@@ -48,6 +48,7 @@
 - Scale up/down a deployment: `kubectl scale deployments/kubernetes-bootcamp --replicas=4`
 - Confirm an update: `kubectl rollout status deployments/kubernetes-bootcamp`
 - Rollback an update: `kubectl rollout undo deployments/kubernetes-bootcamp`
+- Redeploy: `kubectl rollout restart deployment $DEPLOYMENT -n $NAMESPACE`
 
 ## Kubectl Secrets
 - List secrets: `kubectl get secrets`
