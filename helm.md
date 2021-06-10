@@ -45,8 +45,8 @@
 - Rollback a release to the previous revision: `helm rollback happy-panda`
 
 ## Uninstall a Release
-- Uninstall a release: `helm uninstall happy-panda`
-- Uninstall a release but keep release history: `helm uninstall happy-panda --keep-history`
+- Uninstall a release: `helm delete happy-panda`
+- Uninstall a release but keep release history: `helm delete happy-panda --keep-history`
 
 ## Creating Charts
 - Create a new chart: `helm create chartname` (creates a chart folder under **./chartname**)
