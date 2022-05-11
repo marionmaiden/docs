@@ -58,3 +58,6 @@
 - Describe the entries in a secret: `kubectl describe secret secret_name`
 - Edit a secrets file: `kubectl edit secret dispatcher`
 - Apply a secret file: `kubectl apply -f stage_sec.yaml`
+
+## Kubectl HPA
+- monitor hpa with timestamp: `kubectl get hpa dispatcher-hpa --watch | while read line ; do echo -e "$(date +"%Y-%m-%d %H:%M:%S.%3N")\t pods\t $line" ; done`
