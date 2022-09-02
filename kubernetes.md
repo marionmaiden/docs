@@ -61,3 +61,8 @@
 
 ## Kubectl HPA
 - monitor hpa with timestamp: `kubectl get hpa dispatcher-hpa --watch | while read line ; do echo -e "$(date +"%Y-%m-%d %H:%M:%S.%3N")\t pods\t $line" ; done`
+
+## Kubectl Port Forward
+- Forward port for remote debugging on Intellij: `kubectl port-forward pod_name-bd77769bd-cjrbv 5005`
+
+
