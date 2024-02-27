@@ -6,9 +6,10 @@
 - `kubectl version`
 - View cluster details: `kubectl cluster-info`
 - View nodes within a cluster: `kubectl get nodes`
-- View resources usage: kubectl describe resourcequotas
+- View resources usage: `kubectl describe resourcequotas`
 - Get contexts: `kubectl config get-contexts`
 - Get context in use: `kubectl config current-context`
+- Get Kubernetes namespace events: `kubectl events`
 
 ## Kubectl deployment
 - Get deployments in cluster: `kubectl get deployments`
